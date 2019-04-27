@@ -2,23 +2,19 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="204868" started-at="2019-04-26T09:45:59Z" finished-at="2019-04-26T09:49:24Z">
+  <suite name="Default suite" duration-ms="59936" started-at="2019-04-27T12:15:38Z" finished-at="2019-04-27T12:16:38Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="204868" started-at="2019-04-26T09:45:59Z" finished-at="2019-04-26T09:49:24Z">
+    <test name="Default test" duration-ms="59936" started-at="2019-04-27T12:15:38Z" finished-at="2019-04-27T12:16:38Z">
       <class name="mmtTest.mmtFlightPageTest">
-        <test-method status="PASS" signature="setupTest()[pri:0, instance:mmtTest.mmtFlightPageTest@3b1d11]" name="setupTest" is-config="true" duration-ms="198218" started-at="2019-04-26T15:15:59Z" finished-at="2019-04-26T15:19:17Z">
+        <test-method status="PASS" signature="setupTest()[pri:0, instance:mmtTest.mmtFlightPageTest@82f6ef]" name="setupTest" is-config="true" duration-ms="56269" started-at="2019-04-27T17:45:38Z" finished-at="2019-04-27T17:46:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method status="PASS" signature="ValidatepriceTest()[pri:0, instance:mmtTest.mmtFlightPageTest@3b1d11]" name="ValidatepriceTest" duration-ms="5212" started-at="2019-04-26T15:19:17Z" finished-at="2019-04-26T15:19:23Z">
+        <test-method status="PASS" signature="ValidatepriceTest()[pri:0, instance:mmtTest.mmtFlightPageTest@82f6ef]" name="ValidatepriceTest" duration-ms="3620" started-at="2019-04-27T17:46:34Z" finished-at="2019-04-27T17:46:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidatepriceTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:mmtTest.mmtFlightPageTest@3b1d11]" name="teardown" is-config="true" duration-ms="1390" started-at="2019-04-26T15:19:23Z" finished-at="2019-04-26T15:19:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
       </class> <!-- mmtTest.mmtFlightPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

@@ -14,7 +14,7 @@ public class mmtBase {
 		public static WebDriver driver;
 
 	  FileInputStream fs;
-	  Properties prop;
+	 public static Properties prop;
 		
 
 		

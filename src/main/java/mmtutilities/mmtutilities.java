@@ -1,7 +1,9 @@
 package mmtutilities;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import mmtBase.mmtBase;
 
@@ -15,9 +17,10 @@ public class mmtutilities extends mmtBase {
 	
 	 public static void loadallflights() 
 	 {
-		 for(int i=1;i<=10;i++)
-	 	 scrollPageDown(driver); 
+		 for(int i=1;i<=20;i++)
+			 scrollPageDown(driver); 
 		 
 	 }
+	 
 
 }

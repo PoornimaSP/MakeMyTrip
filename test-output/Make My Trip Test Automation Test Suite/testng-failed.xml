@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Make My Trip Test Automation Test Suite]">
+  <test name="Make My trip Test Cases(failed)">
+    <classes>
+      <class name="mmtTest.mmtHomePageTest">
+        <methods>
+          <include name="selectfromtolocationtest"/>
+          <include name="teardown"/>
+          <include name="setupTest"/>
+        </methods>
+      </class> <!-- mmtTest.mmtHomePageTest -->
+      <class name="mmtTest.mmtFlightPageTest">
+        <methods>
+          <include name="onestopflightlistTest"/>
+          <include name="setupTest"/>
+          <include name="teardown"/>
+          <include name="ValidatepriceTest"/>
+        </methods>
+      </class> <!-- mmtTest.mmtFlightPageTest -->
+    </classes>
+  </test> <!-- Make My trip Test Cases(failed) -->
+</suite> <!-- Failed suite [Make My Trip Test Automation Test Suite] -->

@@ -2,6 +2,7 @@ package mmtPages;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,10 +12,10 @@ import mmtBase.mmtBase;
 import mmtutilities.mmtutilities;
 
 public class mmtFlightPage extends mmtBase{
-@FindBy(xpath="//div[@class='splitVw-sctn pull-left']//div[@class='fli-list splitVw-listing']//span[@class='font12 inlineB append_bottom7 insertSep'][1]")
+@FindBy(xpath="//div[@class='splitVw-sctn pull-left']//span[@class='font12 inlineB append_bottom7 insertSep'][1]")
 List<WebElement> DepartureFlightNames;
 
-@FindBy(xpath="//div[@class='splitVw-sctn pull-right']//div[@class='fli-list splitVw-listing']//span[@class='font12 inlineB append_bottom7 insertSep'][1]")
+@FindBy(xpath="//div[@class='splitVw-sctn pull-right']//span[@class='font12 inlineB append_bottom7 insertSep'][1]")
 List<WebElement> ReturnFlightNames;
 
 @FindBy(xpath="//label[@for='filter_stop0']//span[@class='check']")
@@ -23,22 +24,22 @@ WebElement NonStop;
 @FindBy(xpath="//label[@for='filter_stop1']//span[@class='check']")
 WebElement OneStop;
 
-@FindBy(xpath="//div[@class='splitVw-sctn pull-left']//div[@class='fli-list splitVw-listing']//span[@class='splitVw-outer append_right9']")
+@FindBy(xpath="//div[@class='splitVw-sctn pull-left']//span[@class='splitVw-outer append_right9']")
 List<WebElement> depflightradiobutton;
 
-@FindBy(xpath="//div[@class='splitVw-sctn pull-right']//div[@class='fli-list splitVw-listing']//span[@class='splitVw-outer append_right9']")
+@FindBy(xpath="//div[@class='splitVw-sctn pull-right']//span[@class='splitVw-outer append_right9']")
 List<WebElement> retflightradiobutton;
 
-@FindBy(xpath="//div[@class='splitVw-sctn pull-left']//div[@class='fli-list splitVw-listing']//div[@class='pull-right marL5 text-right split-price-sctn']//p[@class='actual-price']//span")
+@FindBy(xpath="//div[@class='splitVw-sctn pull-left']//p[@class='actual-price']//span")
 List<WebElement> depflightprices;
 
-@FindBy(xpath="//div[@class='splitVw-sctn pull-right']//div[@class='fli-list splitVw-listing']//div[@class='pull-right marL5 text-right split-price-sctn']//p[@class='actual-price']//span")
+@FindBy(xpath="//div[@class='splitVw-sctn pull-right']//p[@class='actual-price']//span")
 List<WebElement> retflightprices;
 
-@FindBy(xpath="//div[@class='splitVw-footer-left ']//div[@class='pull-right marL5 text-right']//p[@class='actual-price']//span")
+@FindBy(xpath="//div[@class='splitVw-footer-left ']//p[@class='actual-price']//span")
 WebElement Finaldepflightprices;
 
-@FindBy(xpath="//div[@class='splitVw-footer-right ']//div[@class='pull-right marL5 text-right']//p[@class='actual-price']//span")
+@FindBy(xpath="//div[@class='splitVw-footer-right ']//p[@class='actual-price']//span")
 WebElement Finalretflightprices;
 
 @FindBy(xpath="//span[@class='splitVw-total-fare']")
@@ -52,6 +53,7 @@ public  mmtFlightPage()
 
 public void listofdepartureflights()
 { 
+	driver.manage().deleteAllCookies();
 	mmtutilities.loadallflights();
 	int depflightcount =DepartureFlightNames.size();	
 	System.out.println("Please find below the list of " + depflightcount + "departure flights");
@@ -67,6 +69,7 @@ public void listofreturnflights()
 { 
 	
 	
+	driver.manage().deleteAllCookies();
 	mmtutilities.loadallflights();				
    int retflightcount =ReturnFlightNames.size();
 	
@@ -92,13 +95,13 @@ public void onestopflightlist()
 	
 }
 
-public String[] selectdepandfretflight(int depflightorder,int returnflightorder) 
+public String[] selectdepandfretflight(String depflightorder,String returnflightorder) 
 
 
 {   String price[]= new String[5];  
 	mmtutilities.loadallflights();
 	
-	int depexactorder=depflightorder-1;
+	int depexactorder=Integer.parseInt(depflightorder)-1;
 	JavascriptExecutor js2=((JavascriptExecutor)driver);
 	js2.executeScript("arguments[0].click();",depflightradiobutton.get(depexactorder));
 	
@@ -107,7 +110,7 @@ public String[] selectdepandfretflight(int depflightorder,int returnflightorder)
 	
 	
 	
-	int retexactorder=returnflightorder-1;
+	int retexactorder=Integer.parseInt(returnflightorder)-1;
 	JavascriptExecutor js1=((JavascriptExecutor)driver);
 	js1.executeScript("arguments[0].click();",retflightradiobutton.get(retexactorder));
 	
@@ -120,8 +123,6 @@ public String[] selectdepandfretflight(int depflightorder,int returnflightorder)
 	
 	
 	price[4] = FinalTotalflightprices.getText().replaceFirst("Rs", "").replaceAll(",", "").trim();
-	
-	
 	
 	
 	return price;

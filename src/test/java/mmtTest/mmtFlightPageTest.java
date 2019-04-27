@@ -61,7 +61,7 @@ public class mmtFlightPageTest extends mmtBase{
 	public void ValidatepriceTest() 
 	
 	{
-		String price[]= flights.selectdepandfretflight(3,5);
+		String price[]= flights.selectdepandfretflight(prop.getProperty("depflightorder"),prop.getProperty("returnflightorder"));
 	    int Totalprice=Integer.valueOf(price[0])+ Integer.valueOf(price[1]);
 	    
 	    System.out.println("The total cost of departure and return flight travel is "+ Totalprice);
@@ -71,9 +71,9 @@ public class mmtFlightPageTest extends mmtBase{
 		
 	    int FareDetails = Integer.valueOf(price[4]);
 	    
-	   
-	    Assert.assertEquals(FareDetails,Totalprice);
-	   
+	  
+		   Assert.assertEquals(FareDetails,Totalprice);
+		  
 		
 	}
 	

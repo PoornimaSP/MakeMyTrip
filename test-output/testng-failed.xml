@@ -5,11 +5,8 @@
     <classes>
       <class name="mmtTest.mmtFlightPageTest">
         <methods>
-          <include name="onestopflightlistTest"/>
           <include name="setupTest"/>
           <include name="ValidatepriceTest"/>
-          <include name="flightlistTest"/>
-          <include name="nonstopflightlistTest"/>
         </methods>
       </class> <!-- mmtTest.mmtFlightPageTest -->
     </classes>
